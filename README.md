@@ -1,6 +1,6 @@
 # CS412-NP_COMPLETE
 Rhea: Approximation Code
-Alissa: Exact Code
+Alyssa: Exact Code
 James: Exact Presentations
 John: Approximation Code
 
