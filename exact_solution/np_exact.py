@@ -22,31 +22,26 @@ def main():
         for edge in edge_list[1:]:
             edges[i].append(edge)
 
-    # TODO:
-    # outlier = verticies aren't connected || just one vertex == 1 color
-    # outlier = num verticies = 0 == 0 colors
+    if num_verticies == 0:
+        print(0)
+    else:
+        min_found = False
 
-    # want to pass itertools a product [1, 2], repeat = num_verticies
-    # then                     product [1, 2, 3], repeat = num_verticies
-    # then                     product [1, 2, 3, ... num_verticies (-1??), repeat = num_verticies
-    # if we ever recieve true, stop it because that's our min (planning on starting from 2 and working up)
-
-    min_found = False
-
-    num_colors = 2
-    while min_found == False or num_colors == num_verticies:
-        for color_list in itertools.product(range(1, num_colors + 1), repeat=num_verticies):
-            colors = {}
-            i = 0
-            for u in edges:
-                colors[u] = color_list[i]
-                i += 1
-
-            if np_checker(edges, colors) == True:
-                min_found = True
-                print(num_colors)
-                break    
-        num_colors += 1
+        num_colors = 1
+        while min_found == False or num_colors == num_verticies:
+            for color_list in itertools.product(range(1, num_colors + 1), repeat=num_verticies):
+                colors = {}
+                i = 0
+                for u in edges:
+                    colors[u] = color_list[i]
+                    i += 1
+                # print(color_list)
+                if np_checker(edges, colors) == True:
+                    min_found = True
+                    # print(colors)
+                    print(num_colors)
+                    break    
+            num_colors += 1
 
 if __name__ == "__main__":
     main()
