@@ -2,12 +2,12 @@
 Author: Rhea Morris 
 Date: 04/29/2022
 
-Time Complexity: O(n^2) in the worst case, but usually takes linear time.
-
 Approach: This approximation algorithm takes a greedy approach by picking the node
 with the highest degree and coloring it. Then, it removes the node from the graph and its edges.
 Then, it repeats the process until there are no more nodes to be colored, or if there are isolated nodes
 left then it colors them all with the same color.
+
+Time Complexity: O(n^2) in the worst case, but usually takes linear time.
 
 Citation: https://www.cs.cmu.edu/~avrim/Papers/coloring_worstcase.pdf
           Used this to read about different ways of approximating the min graph coloring problem.
