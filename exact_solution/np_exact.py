@@ -28,17 +28,15 @@ def main():
         min_found = False
 
         num_colors = 1
-        while min_found == False or num_colors == num_verticies:
+        while min_found == False and num_colors <= num_verticies:
             for color_list in itertools.product(range(1, num_colors + 1), repeat=num_verticies):
                 colors = {}
                 i = 0
                 for u in edges:
                     colors[u] = color_list[i]
                     i += 1
-                # print(color_list)
                 if np_checker(edges, colors) == True:
                     min_found = True
-                    # print(colors)
                     print(num_colors)
                     break    
             num_colors += 1
