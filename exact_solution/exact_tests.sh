@@ -38,11 +38,47 @@ echo TEST E EXACT - expected: 3
 echo TEST E APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_e.txt)
 echo TEST E APPROX - expected: 3
 
+echo ----------------------------
+
+# one node
+echo TEST F EXACT - output: $(time python3 cs412_np_exact.py < test_cases/test_f.txt)
+echo TEST F EXACT - expected: 1
+
+echo TEST F APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_f.txt)
+echo TEST F APPROX - expected: 1
+
+echo ----------------------------
+
+# five nodes with zero edges
+echo TEST G EXACT - output: $(time python3 cs412_np_exact.py < test_cases/test_g.txt)
+echo TEST G EXACT - expected: 1
+
+echo TEST G APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_g.txt)
+echo TEST G APPROX - expected: 1
+
+echo ----------------------------
+
+# three sets of two nodes connected by one edge
+echo TEST H EXACT - output: $(time python3 cs412_np_exact.py < test_cases/test_h.txt)
+echo TEST H EXACT - expected: 2
+
+echo TEST H APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_h.txt)
+echo TEST H APPROX - expected: 2
+
 # echo ----------------------------
 
-# complete graph with 9 nodes, takes around 15 minutes?
-# echo TEST 9 EXACT - output: $(time python3 cs412_np_exact.py < test_9.txt)
-# echo TEST 9 EXACT - expected: 3
+# complete graph with 9 nodes, takes around 15 minutes
+# echo TEST I EXACT - output: $(time python3 cs412_np_exact.py < test_i.txt)
+# echo TEST I EXACT - expected: 3
 
-# echo TEST 9 APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_9.txt)
-# echo TEST 9 APPROX - expected: 3
+# echo TEST I APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_i.txt)
+# echo TEST I APPROX - expected: 3
+
+# echo ----------------------------
+
+# this test will take around 40 minutes
+# echo TEST J EXACT - output: $(time python3 cs412_np_exact.py < test_cases/test_j.txt)
+# echo TEST J EXACT - expected: 9
+
+# echo TEST J APPROX - output: $(time python3 ../approximation_solution/cs412_mingraph_approximation_a.py < test_cases/test_j.txt)
+# echo TEST J APPROX - expected: 9
